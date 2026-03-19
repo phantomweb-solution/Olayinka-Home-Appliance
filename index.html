@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olayinka Home Appliances – Imported & Tested Appliances</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:    #0A1F44;
+      --blue-md: #122b5e;
+      --blue-lt: #1a3a7a;
+      --orange:  #FF7A00;
+      --orange-h:#e56c00;
+      --white:   #ffffff;
+      --off-wh:  #f8f9fc;
+      --grey:    #6b7280;
+      --border:  #e5e7eb;
+      --shadow:  0 4px 24px rgba(10,31,68,.10);
+      --radius:  14px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--white);
+      color: #1a1a2e;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─────────────────────────────────────── */
+    .announce {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      font-size: .82rem;
+      font-weight: 600;
+      padding: .45rem 1rem;
+      letter-spacing: .02em;
+    }
+    .announce span { opacity: .85; }
+
+    /* ─── NAVBAR ───────────────────────────────────────────────── */
+    .navbar {
+      background: var(--blue);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,.25);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 1.25rem;
+      gap: 1rem;
+    }
+    .nav-brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+    .nav-logo {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo svg { width: 24px; height: 24px; }
+    .nav-title { color: var(--white); }
+    .nav-title strong {
+      display: block; font-family: 'Poppins', sans-serif;
+      font-size: 1rem; font-weight: 700; line-height: 1.1;
+      white-space: nowrap;
+    }
+    .nav-title span { font-size: .72rem; color: rgba(255,255,255,.65); letter-spacing: .03em; }
+    .nav-wa {
+      display: flex; align-items: center; gap: .4rem;
+      background: #25D366; color: var(--white);
+      text-decoration: none; font-family: 'Poppins', sans-serif;
+      font-size: .8rem; font-weight: 600;
+      padding: .5rem .95rem; border-radius: 50px;
+      flex-shrink: 0; white-space: nowrap;
+      transition: background .2s, transform .15s;
+    }
+    .nav-wa:hover { background: #1eb85a; transform: scale(1.04); }
+    .nav-wa svg { width: 16px; height: 16px; }
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-lt) 60%, #1e4fa3 100%);
+      position: relative; overflow: hidden;
+      padding: 3.5rem 1.25rem 4rem;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 15% 50%, rgba(255,122,0,.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(255,122,0,.10) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    /* decorative dots */
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .hero-dots::after {
+      content: '';
+      position: absolute; inset: -50%;
+      background-image: radial-gradient(rgba(255,255,255,.07) 1.5px, transparent 1.5px);
+      background-size: 30px 30px;
+    }
+    .hero-inner { position: relative; max-width: 700px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(255,122,0,.18); border: 1px solid rgba(255,122,0,.4);
+      color: #ffb055; font-size: .78rem; font-weight: 600;
+      padding: .35rem .85rem; border-radius: 50px; margin-bottom: 1.25rem;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    .hero-badge::before { content: '✓'; }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 800; color: var(--white);
+      line-height: 1.18; margin-bottom: .75rem;
+    }
+    .hero h1 em {
+      font-style: normal; color: var(--orange);
+      position: relative; display: inline-block;
+    }
+    .hero h1 em::after {
+      content: '';
+      position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 3px; background: var(--orange); border-radius: 2px; opacity: .6;
+    }
+    .hero p {
+      color: rgba(255,255,255,.78); font-size: 1rem;
+      max-width: 520px; margin: 0 auto 2rem;
+    }
+    .hero-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+    .btn-hero-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--orange); color: var(--white);
+      font-family: 'Poppins', sans-serif; font-weight: 600;
+      font-size: .95rem; padding: .85rem 1.75rem;
+      border-radius: 50px; text-decoration: none;
+      box-shadow: 0 8px 24px rgba(255,122,0,.4);
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .btn-hero-primary:hover { background: var(--orange-h); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(255,122,0,.45); }
+    .btn-hero-secondary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.12); color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.3);
+      font-family: 'Poppins', sans-serif; font-weight: 600;
+      font-size: .95rem; padding: .85rem 1.75rem;
+      border-radius: 50px; text-decoration: none;
+      backdrop-filter: blur(6px);
+      transition: background .2s, transform .15s;
+    }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 2rem;
+      margin-top: 2.5rem; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      display: block; font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem; font-weight: 800; color: var(--orange);
+    }
+    .stat-lbl { font-size: .78rem; color: rgba(255,255,255,.6); letter-spacing: .03em; }
+
+    /* ─── SECTION TITLES ────────────────────────────────────────── */
+    .section { padding: 3.5rem 1.25rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 2.25rem; }
+    .section-label {
+      display: inline-block;
+      font-size: .75rem; font-weight: 700;
+      color: var(--orange); letter-spacing: .12em;
+      text-transform: uppercase; margin-bottom: .5rem;
+    }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 700; color: var(--blue); line-height: 1.25;
+    }
+    .section-title span { color: var(--orange); }
+    .section-sub {
+      margin-top: .5rem; color: var(--grey);
+      font-size: .93rem; max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ─── PRODUCTS GRID ─────────────────────────────────────────── */
+    .products-bg { background: var(--off-wh); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.1rem;
+    }
+    @media(min-width: 640px)  { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media(min-width: 1024px) { .products-grid { grid-template-columns: repeat(4, 1fr); gap: 1.4rem; } }
+
+    /* ─── PRODUCT CARD ──────────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform .22s, box-shadow .22s;
+      border: 1px solid var(--border);
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(10,31,68,.14); }
+    .card-img {
+      aspect-ratio: 4/3;
+      background: linear-gradient(145deg, #edf2fb, #d8e4f7);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .card-img svg { width: 72px; height: 72px; opacity: .85; }
+    .card-img .img-tag {
+      position: absolute; top: .6rem; left: .6rem;
+      background: #22c55e; color: #fff;
+      font-size: .65rem; font-weight: 700;
+      padding: .2rem .55rem; border-radius: 50px;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    /* placeholder photo style */
+    .card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: none; /* show when real image added */
+    }
+    .card-body { padding: .9rem; flex: 1; display: flex; flex-direction: column; }
+    .card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: .93rem; font-weight: 700;
+      color: var(--blue); margin-bottom: .35rem; line-height: 1.3;
+    }
+    .card-desc {
+      font-size: .8rem; color: var(--grey);
+      line-height: 1.55; flex: 1; margin-bottom: .8rem;
+    }
+    .card-condition {
+      display: flex; align-items: center; gap: .3rem;
+      font-size: .72rem; color: #22c55e; font-weight: 600;
+      margin-bottom: .8rem;
+    }
+    .card-condition::before {
+      content: '✓'; width: 14px; height: 14px;
+      background: rgba(34,197,94,.12); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; flex-shrink: 0;
+    }
+    .btn-order {
+      display: flex; align-items: center; justify-content: center; gap: .4rem;
+      background: #25D366; color: var(--white);
+      font-family: 'Poppins', sans-serif; font-weight: 600;
+      font-size: .8rem; padding: .6rem .75rem;
+      border-radius: 8px; border: none; cursor: pointer;
+      text-decoration: none; width: 100%;
+      transition: background .2s, transform .12s;
+    }
+    .btn-order:hover { background: #1eb85a; transform: scale(1.02); }
+    .btn-order svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ─── TRUST BAR ─────────────────────────────────────────────── */
+    .trust-bar { background: var(--blue); padding: 2rem 1.25rem; }
+    .trust-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    @media(min-width:600px) { .trust-inner { grid-template-columns: repeat(4, 1fr); } }
+    .trust-item { text-align: center; }
+    .trust-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(255,122,0,.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto .6rem;
+    }
+    .trust-icon svg { width: 22px; height: 22px; }
+    .trust-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: .85rem; font-weight: 600; color: var(--white);
+      line-height: 1.3;
+    }
+    .trust-sub { font-size: .72rem; color: rgba(255,255,255,.5); margin-top: .15rem; }
+
+    /* ─── CUSTOM REQUEST ────────────────────────────────────────── */
+    .custom-box {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-lt) 100%);
+      border-radius: 18px;
+      padding: 2rem 1.5rem;
+      color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .custom-box::before {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 160px; height: 160px; border-radius: 50%;
+      background: rgba(255,122,0,.12);
+      pointer-events: none;
+    }
+    .custom-box-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem; font-weight: 700; margin-bottom: .35rem;
+    }
+    .custom-box-title span { color: var(--orange); }
+    .custom-box-sub { font-size: .88rem; color: rgba(255,255,255,.7); margin-bottom: 1.25rem; }
+    .custom-box textarea {
+      width: 100%; min-height: 110px;
+      padding: .85rem 1rem;
+      border-radius: 10px; border: 1.5px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.07);
+      color: var(--white); font-family: 'Open Sans', sans-serif; font-size: .9rem;
+      resize: vertical; outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .custom-box textarea::placeholder { color: rgba(255,255,255,.4); }
+    .custom-box textarea:focus { border-color: var(--orange); background: rgba(255,255,255,.12); }
+    .btn-custom {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      background: #25D366; color: var(--white);
+      font-family: 'Poppins', sans-serif; font-weight: 700;
+      font-size: .93rem; padding: .85rem 1.5rem;
+      border-radius: 10px; border: none; cursor: pointer;
+      margin-top: .9rem; width: 100%;
+      box-shadow: 0 4px 18px rgba(37,211,102,.35);
+      transition: background .2s, transform .15s;
+    }
+    .btn-custom:hover { background: #1eb85a; transform: scale(1.02); }
+    .btn-custom svg { width: 20px; height: 20px; }
+
+    /* ─── HOW IT WORKS ──────────────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 1.25rem; }
+    @media(min-width:640px) { .steps { flex-direction: row; } }
+    .step {
+      flex: 1; background: var(--white);
+      border-radius: var(--radius); padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: .6rem;
+      position: relative;
+    }
+    .step-num {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--orange); color: var(--white);
+      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-title {
+      font-family: 'Poppins', sans-serif; font-weight: 700;
+      font-size: .97rem; color: var(--blue);
+    }
+    .step-desc { font-size: .84rem; color: var(--grey); }
+    .step-connector {
+      display: none;
+    }
+    @media(min-width:640px) {
+      .steps { align-items: flex-start; }
+      .step-connector {
+        display: flex; align-items: center; padding-top: 1.5rem;
+        color: var(--orange); font-size: 1.3rem; opacity: .5;
+      }
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: var(--blue);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 2.5rem 1.25rem 1.5rem;
+    }
+    .footer-logo {
+      display: inline-flex; align-items: center; gap: .6rem;
+      margin-bottom: 1rem; text-decoration: none;
+    }
+    .footer-logo-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-logo-icon svg { width: 20px; height: 20px; }
+    .footer-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; color: var(--white); font-size: 1rem;
+    }
+    .footer-links {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: .5rem 1.5rem;
+      margin: 1rem 0; list-style: none;
+    }
+    .footer-links a { color: rgba(255,255,255,.55); text-decoration: none; font-size: .84rem; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-contact {
+      margin: 1rem 0; font-size: .85rem;
+    }
+    .footer-contact a { color: var(--orange); text-decoration: none; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 1.25rem 0 .75rem; }
+    .footer-copy { font-size: .75rem; opacity: .5; }
+
+    /* ─── FLOATING WHATSAPP ─────────────────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.5);
+      animation: pulse 2.5s infinite;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 30px; height: 30px; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.5); }
+      50%       { box-shadow: 0 6px 32px rgba(37,211,102,.75), 0 0 0 10px rgba(37,211,102,.12); }
+    }
+
+    /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement -->
+  <div class="announce">
+    🚚 We deliver across Lagos & Ogun State &nbsp;|&nbsp; <span>Call/WhatsApp: 07035551100</span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">
+        <div class="nav-logo">
+          <!-- home plug icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/>
+            <circle cx="12" cy="14" r="2"/>
+          </svg>
+        </div>
+        <div class="nav-title">
+          <strong>Olayinka Home Appliances</strong>
+          <span>Imported &amp; Tested Appliances</span>
+        </div>
+      </a>
+      <a class="nav-wa" href="https://wa.me/2347035551100" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.051 2C6.476 2 2 6.477 2 12.051c0 1.97.574 3.805 1.558 5.354L2 22l4.747-1.53A10.023 10.023 0 0 0 12.051 22C17.625 22 22 17.523 22 11.949 22 6.376 17.625 2 12.051 2zm0 18.182a8.148 8.148 0 0 1-4.316-1.23l-.309-.184-3.204 1.033 1.015-3.134-.201-.321a8.18 8.18 0 0 1-1.165-4.295c0-4.524 3.682-8.206 8.18-8.206 4.499 0 8.181 3.682 8.181 8.206 0 4.523-3.682 8.131-8.181 8.131z"/></svg>
+        Chat Now
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-dots"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">Quality Guaranteed</div>
+      <h1>Premium Home Appliances at<br><em>Affordable Prices</em></h1>
+      <p>Trusted imported and thoroughly tested home appliances. Every item inspected, cleaned, and ready for immediate use.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-hero-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          View Products
+        </a>
+        <a href="https://wa.me/2347035551100" target="_blank" rel="noopener" class="btn-hero-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.051 2C6.476 2 2 6.477 2 12.051c0 1.97.574 3.805 1.558 5.354L2 22l4.747-1.53A10.023 10.023 0 0 0 12.051 22C17.625 22 22 17.523 22 11.949 22 6.376 17.625 2 12.051 2zm0 18.182a8.148 8.148 0 0 1-4.316-1.23l-.309-.184-3.204 1.033 1.015-3.134-.201-.321a8.18 8.18 0 0 1-1.165-4.295c0-4.524 3.682-8.206 8.18-8.206 4.499 0 8.181 3.682 8.181 8.206 0 4.523-3.682 8.131-8.181 8.131z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-lbl">Items Sold</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">Tested &amp; Inspected</span></div>
+        <div class="stat"><span class="stat-num">⭐ 4.9</span><span class="stat-lbl">Customer Rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section products-bg" id="products">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-label">Our Products</span>
+        <h2 class="section-title">Quality Appliances, <span>Ready to Order</span></h2>
+        <p class="section-sub">Every appliance is imported, thoroughly tested, and confirmed working before listing. No disappointments.</p>
+      </div>
+
+      <div class="products-grid" id="productGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="trust-label">100% Tested</div>
+        <div class="trust-sub">Every item inspected</div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="trust-label">Fast Delivery</div>
+        <div class="trust-sub">Lagos &amp; Ogun State</div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="trust-label">Trusted Quality</div>
+        <div class="trust-sub">Imported brands</div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="trust-label">Great Prices</div>
+        <div class="trust-sub">Best value always</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-label">How to Order</span>
+        <h2 class="section-title">3 Easy Steps to <span>Get Your Appliance</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <div class="step-title">Pick Your Product</div>
+          <div class="step-desc">Browse our catalogue and find the appliance you need. Can't find it? Use the custom request below.</div>
+        </div>
+        <div class="step-connector">→</div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <div class="step-title">Order on WhatsApp</div>
+          <div class="step-desc">Tap "Order on WhatsApp" — your message is pre-filled. We'll confirm availability and pricing instantly.</div>
+        </div>
+        <div class="step-connector">→</div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <div class="step-title">Receive &amp; Enjoy</div>
+          <div class="step-desc">We arrange pickup or delivery. Your appliance arrives tested, cleaned, and ready to use.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Request -->
+  <section class="section products-bg" id="custom">
+    <div class="section-inner">
+      <div class="custom-box reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+          <div style="flex:1;min-width:220px;">
+            <div class="custom-box-title">Didn't see what you <span>want?</span></div>
+            <div class="custom-box-sub">Describe any appliance and we'll source it for you. We have access to a wide range of imported appliances not listed here.</div>
+          </div>
+          <div style="flex:1.4;min-width:240px;">
+            <textarea id="customMsg" placeholder="e.g. I'm looking for a Philips steam iron, Midea chest freezer, Samsung washing machine..."></textarea>
+            <button class="btn-custom" onclick="sendCustomRequest()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.051 2C6.476 2 2 6.477 2 12.051c0 1.97.574 3.805 1.558 5.354L2 22l4.747-1.53A10.023 10.023 0 0 0 12.051 22C17.625 22 22 17.523 22 11.949 22 6.376 17.625 2 12.051 2zm0 18.182a8.148 8.148 0 0 1-4.316-1.23l-.309-.184-3.204 1.033 1.015-3.134-.201-.321a8.18 8.18 0 0 1-1.165-4.295c0-4.524 3.682-8.206 8.18-8.206 4.499 0 8.181 3.682 8.181 8.206 0 4.523-3.682 8.131-8.181 8.131z"/></svg>
+              Send Request on WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <a class="footer-logo" href="#">
+      <div class="footer-logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/>
+          <circle cx="12" cy="14" r="2"/>
+        </svg>
+      </div>
+      <span class="footer-name">Olayinka Home Appliances</span>
+    </a>
+    <p style="font-size:.85rem;max-width:400px;margin:0 auto .75rem;">
+      Your trusted source for premium imported and tested home appliances.
+    </p>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#custom">Custom Request</a></li>
+      <li><a href="https://wa.me/2347035551100" target="_blank">WhatsApp Us</a></li>
+    </ul>
+    <div class="footer-contact">
+      📞 <a href="tel:+2347035551100">07035551100</a> &nbsp;|&nbsp;
+      💬 <a href="https://wa.me/2347035551100" target="_blank">WhatsApp</a>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-copy">© 2025 Olayinka Home Appliances. All rights reserved.</div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" href="https://wa.me/2347035551100" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.051 2C6.476 2 2 6.477 2 12.051c0 1.97.574 3.805 1.558 5.354L2 22l4.747-1.53A10.023 10.023 0 0 0 12.051 22C17.625 22 22 17.523 22 11.949 22 6.376 17.625 2 12.051 2zm0 18.182a8.148 8.148 0 0 1-4.316-1.23l-.309-.184-3.204 1.033 1.015-3.134-.201-.321a8.18 8.18 0 0 1-1.165-4.295c0-4.524 3.682-8.206 8.18-8.206 4.499 0 8.181 3.682 8.181 8.206 0 4.523-3.682 8.131-8.181 8.131z"/></svg>
+  </a>
+
+  <script>
+    /* ── WhatsApp number ── */
+    const WA_NUMBER = '2347035551100';
+
+    /* ── SVG Icons for products ── */
+    const icons = {
+      iron: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="38" width="60" height="22" rx="11" fill="#0A1F44" opacity=".15"/>
+        <path d="M14 42h50a8 8 0 0 1 0 16H14a8 8 0 0 1 0-16z" fill="#0A1F44"/>
+        <rect x="28" y="26" width="24" height="18" rx="4" fill="#1a3a7a"/>
+        <rect x="32" y="30" width="16" height="5" rx="2" fill="#FF7A00" opacity=".8"/>
+        <path d="M36 58 Q40 64 44 58" stroke="#ccc" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="22" cy="50" r="3" fill="#FF7A00" opacity=".7"/>
+        <circle cx="32" cy="52" r="2" fill="#fff" opacity=".4"/>
+        <circle cx="40" cy="52" r="2" fill="#fff" opacity=".4"/>
+        <circle cx="48" cy="52" r="2" fill="#fff" opacity=".4"/>
+      </svg>`,
+
+      blender: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="26" y="14" width="28" height="36" rx="4" fill="#0A1F44" opacity=".15"/>
+        <path d="M28 18 L52 18 L48 50 L32 50 Z" fill="#1a3a7a"/>
+        <rect x="24" y="10" width="32" height="10" rx="3" fill="#0A1F44"/>
+        <rect x="24" y="50" width="32" height="16" rx="3" fill="#0A1F44"/>
+        <rect x="28" y="53" width="12" height="4" rx="2" fill="#FF7A00" opacity=".8"/>
+        <rect x="44" y="53" width="8" height="4" rx="2" fill="#FF7A00" opacity=".4"/>
+        <path d="M36 30 Q40 25 44 30" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+        <circle cx="40" cy="35" r="4" fill="#fff" opacity=".2"/>
+        <rect x="52" y="30" width="6" height="3" rx="1.5" fill="#0A1F44" opacity=".6"/>
+      </svg>`,
+
+      oven: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="16" width="64" height="52" rx="5" fill="#0A1F44"/>
+        <rect x="14" y="24" width="52" height="30" rx="3" fill="#1a3a7a"/>
+        <rect x="18" y="28" width="44" height="22" rx="2" fill="#0d2657"/>
+        <rect x="18" y="28" width="44" height="22" rx="2" fill="url(#ovenGrad)" opacity=".6"/>
+        <defs>
+          <linearGradient id="ovenGrad" x1="18" y1="28" x2="62" y2="50" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF7A00" stop-opacity=".3"/>
+            <stop offset="1" stop-color="#FF7A00" stop-opacity=".05"/>
+          </linearGradient>
+        </defs>
+        <circle cx="24" cy="60" r="4" fill="#FF7A00" opacity=".85"/>
+        <circle cx="36" cy="60" r="4" fill="#ccc" opacity=".6"/>
+        <circle cx="48" cy="60" r="4" fill="#ccc" opacity=".6"/>
+        <circle cx="60" cy="60" r="4" fill="#ccc" opacity=".6"/>
+        <rect x="22" y="38" width="36" height="2" rx="1" fill="#fff" opacity=".1"/>
+      </svg>`,
+
+      gasCooker: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="20" width="64" height="48" rx="5" fill="#0A1F44"/>
+        <rect x="12" y="24" width="56" height="26" rx="3" fill="#1a3a7a"/>
+        <circle cx="26" cy="37" r="9" fill="#0d2657" stroke="#FF7A00" stroke-width="1.5"/>
+        <circle cx="26" cy="37" r="5" fill="#0A1F44"/>
+        <circle cx="26" cy="37" r="2" fill="#FF7A00" opacity=".7"/>
+        <circle cx="54" cy="37" r="9" fill="#0d2657" stroke="#FF7A00" stroke-width="1.5"/>
+        <circle cx="54" cy="37" r="5" fill="#0A1F44"/>
+        <circle cx="54" cy="37" r="2" fill="#FF7A00" opacity=".7"/>
+        <rect x="14" y="56" width="10" height="8" rx="2" fill="#0d2657"/>
+        <rect x="28" y="56" width="10" height="8" rx="2" fill="#0d2657"/>
+        <rect x="42" y="56" width="10" height="8" rx="2" fill="#0d2657"/>
+        <rect x="56" y="56" width="10" height="8" rx="2" fill="#0d2657"/>
+        <!-- flame flicker -->
+        <path d="M24 32 Q26 27 28 32 Q26 30 24 32Z" fill="#FF7A00" opacity=".8"/>
+      </svg>`,
+
+      fridge: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="18" y="6" width="44" height="68" rx="6" fill="#0A1F44"/>
+        <rect x="21" y="9" width="38" height="30" rx="4" fill="#1a3a7a"/>
+        <rect x="21" y="42" width="38" height="29" rx="4" fill="#0d2657"/>
+        <rect x="18" y="37" width="44" height="7" rx="2" fill="#0A1F44"/>
+        <rect x="55" y="18" width="4" height="14" rx="2" fill="#ccc" opacity=".5"/>
+        <rect x="55" y="50" width="4" height="10" rx="2" fill="#ccc" opacity=".5"/>
+        <rect x="26" y="16" width="20" height="2" rx="1" fill="#fff" opacity=".15"/>
+        <rect x="26" y="20" width="14" height="2" rx="1" fill="#fff" opacity=".1"/>
+      </svg>`,
+
+      washingMachine: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="8" width="60" height="68" rx="6" fill="#0A1F44"/>
+        <rect x="14" y="12" width="52" height="16" rx="3" fill="#1a3a7a"/>
+        <circle cx="22" cy="20" r="4" fill="#FF7A00" opacity=".8"/>
+        <circle cx="34" cy="20" r="3" fill="#ccc" opacity=".5"/>
+        <circle cx="44" cy="20" r="3" fill="#ccc" opacity=".5"/>
+        <circle cx="40" cy="50" r="18" fill="#0d2657" stroke="#1a3a7a" stroke-width="3"/>
+        <circle cx="40" cy="50" r="13" fill="#1a3a7a"/>
+        <circle cx="40" cy="50" r="7" fill="#0A1F44" stroke="#FF7A00" stroke-width="1" opacity=".7"/>
+        <path d="M35 46 Q40 42 45 46" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".4"/>
+      </svg>`,
+
+      fan: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="56" width="12" height="16" rx="3" fill="#0A1F44"/>
+        <rect x="24" y="70" width="32" height="5" rx="2.5" fill="#0A1F44"/>
+        <circle cx="40" cy="36" r="22" fill="#f0f4ff" stroke="#e5e7eb" stroke-width="1.5"/>
+        <circle cx="40" cy="36" r="6" fill="#0A1F44"/>
+        <!-- blades -->
+        <ellipse cx="40" cy="20" width="8" height="18" rx="4" ry="9" fill="#1a3a7a" opacity=".85"/>
+        <ellipse cx="55" cy="46" width="8" height="18" rx="4" ry="9" fill="#1a3a7a" opacity=".85" transform="rotate(120 55 46)"/>
+        <ellipse cx="25" cy="46" width="8" height="18" rx="4" ry="9" fill="#1a3a7a" opacity=".85" transform="rotate(240 25 46)"/>
+        <circle cx="40" cy="36" r="3.5" fill="#FF7A00"/>
+      </svg>`,
+
+      riceCooker: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="40" cy="52" rx="28" ry="18" fill="#0A1F44"/>
+        <rect x="12" y="36" width="56" height="18" rx="4" fill="#0A1F44"/>
+        <path d="M14 36 Q40 14 66 36" fill="#1a3a7a"/>
+        <ellipse cx="40" cy="36" rx="26" ry="6" fill="#1a3a7a"/>
+        <circle cx="40" cy="22" r="5" fill="#FF7A00" opacity=".85"/>
+        <rect x="16" y="54" width="12" height="4" rx="2" fill="#FF7A00" opacity=".7"/>
+        <rect x="32" y="54" width="8" height="4" rx="2" fill="#ccc" opacity=".4"/>
+        <ellipse cx="40" cy="66" rx="28" ry="4" fill="rgba(0,0,0,.08)"/>
+      </svg>`
+    };
+
+    /* ── Product Data ── */
+    const products = [
+      {
+        id: 'electric-iron',
+        title: 'Electric Steam Iron',
+        desc: 'Powerful steam iron with adjustable temperature settings. Imported, fully functional, and ready to use. Perfect for crisp, wrinkle-free clothes every time.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'iron'
+      },
+      {
+        id: 'blender',
+        title: 'Heavy Duty Blender',
+        desc: 'High-performance blender for smoothies, soups, and more. Stainless steel blades, multiple speed settings. Inspected and confirmed working.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'blender'
+      },
+      {
+        id: 'microwave-oven',
+        title: 'Microwave Oven',
+        desc: 'Compact countertop microwave with multiple power levels and timer. Fast, efficient heating. Cleaned, tested, and in excellent working condition.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'oven'
+      },
+      {
+        id: 'gas-cooker',
+        title: '4-Burner Gas Cooker',
+        desc: 'Full-sized 4-burner gas cooker with oven. Durable cast iron grates. Ideal for family cooking. Thoroughly inspected and in great working condition.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'gasCooker'
+      },
+      {
+        id: 'refrigerator',
+        title: 'Double-Door Refrigerator',
+        desc: 'Spacious double-door fridge with freezer compartment. Energy efficient, cools excellently. Cleaned and confirmed in perfect working order before listing.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'fridge'
+      },
+      {
+        id: 'washing-machine',
+        title: 'Automatic Washing Machine',
+        desc: 'Front-load or top-load washing machine with multiple wash programs. Fully automatic, energy saving. Tested and ready for immediate use.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'washingMachine'
+      },
+      {
+        id: 'standing-fan',
+        title: 'Standing Pedestal Fan',
+        desc: '3-speed adjustable standing fan with oscillation feature. Quiet, powerful airflow. Height adjustable. Tested and confirmed working perfectly.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'fan'
+      },
+      {
+        id: 'rice-cooker',
+        title: 'Electric Rice Cooker',
+        desc: 'Automatic rice cooker with keep-warm function. Perfect for rice, porridge, and steam cooking. Imported brand, tested and in excellent condition.',
+        condition: 'UK Used – Fully Tested',
+        icon: 'riceCooker'
+      }
+    ];
+
+    /* ── Render Product Cards ── */
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = products.map((p, i) => `
+        <div class="card reveal" style="transition-delay:${(i % 4) * 0.07}s">
+          <div class="card-img">
+            <span class="img-tag">Tested ✓</span>
+            <!-- Replace src below with real product image URL -->
+            <img src="" alt="${p.title}" />
+            ${icons[p.icon] || ''}
+          </div>
+          <div class="card-body">
+            <div class="card-title">${p.title}</div>
+            <div class="card-desc">${p.desc}</div>
+            <div class="card-condition">${p.condition}</div>
+            <a class="btn-order"
+               href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hello, I want to order: ' + p.title)}"
+               target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.051 2C6.476 2 2 6.477 2 12.051c0 1.97.574 3.805 1.558 5.354L2 22l4.747-1.53A10.023 10.023 0 0 0 12.051 22C17.625 22 22 17.523 22 11.949 22 6.376 17.625 2 12.051 2zm0 18.182a8.148 8.148 0 0 1-4.316-1.23l-.309-.184-3.204 1.033 1.015-3.134-.201-.321a8.18 8.18 0 0 1-1.165-4.295c0-4.524 3.682-8.206 8.18-8.206 4.499 0 8.181 3.682 8.181 8.206 0 4.523-3.682 8.131-8.181 8.131z"/></svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+      `).join('');
+      observeReveal();
+    }
+
+    /* ── Custom Request ── */
+    function sendCustomRequest() {
+      const msg = document.getElementById('customMsg').value.trim();
+      if (!msg) {
+        document.getElementById('customMsg').focus();
+        document.getElementById('customMsg').style.borderColor = '#FF7A00';
+        return;
+      }
+      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hello, I am looking for: ' + msg)}`;
+      window.open(url, '_blank', 'noopener');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('customMsg')?.addEventListener('input', function() {
+        this.style.borderColor = '';
+      });
+    });
+
+    /* ── Scroll Reveal ── */
+    function observeReveal() {
+      const els = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(el => obs.observe(el));
+    }
+
+    /* ── Init ── */
+    renderProducts();
+  </script>
+</body>
+</html>
